@@ -79,8 +79,6 @@ class TacosTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TacoCell", forIndexPath: indexPath)
-
-       
         
         let myTaco = self.tacos[indexPath.row]
         
@@ -94,16 +92,11 @@ class TacosTableViewController: UITableViewController {
         
         cell.imageView?.image = image
         
-        print(myTaco.photo_url)
+//        print(myTaco.photo_url)
         
         cell.textLabel?.text = myTaco.name
         cell.detailTextLabel?.text = myTaco.price
 
-        
-        
-        
-        
-        
         return cell
     }
 }

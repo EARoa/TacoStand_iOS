@@ -77,7 +77,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price of Taco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZ2-g9-5xU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price (e.x: 3.00)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZ2-g9-5xU">
                                 <rect key="frame" x="175" y="255" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -106,6 +106,11 @@
                             <constraint firstItem="B3q-J3-aR1" firstAttribute="top" secondItem="q7Y-P2-1wH" secondAttribute="bottom" constant="72" id="wYf-Jj-YaR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tacoName" destination="B3q-J3-aR1" id="oro-A3-jMO"/>
+                        <outlet property="tacoPhotoURL" destination="5LL-fX-AFi" id="A0k-vm-Osi"/>
+                        <outlet property="tacoPrice" destination="mZ2-g9-5xU" id="sNM-DD-mkV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bge-Kg-PAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
