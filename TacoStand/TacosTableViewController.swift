@@ -16,7 +16,7 @@ class TacosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadThe🌮()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableData:", name: "reload", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(TacosTableViewController.reloadTableData(_:)), name: "reload", object: nil)
 
         
     }
@@ -62,7 +62,7 @@ class TacosTableViewController: UITableViewController {
             
             }.resume()
     }
-
+    
     
     func reloadTableData(notification: NSNotification) {
         tableView.reloadData()

@@ -30,6 +30,8 @@ class NewTacoViewController: UIViewController {
 
     @IBAction func closeButtonPressed(){
         self.dismissViewControllerAnimated(true, completion: {})
+        NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
+
     }
     
     

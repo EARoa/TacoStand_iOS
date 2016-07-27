@@ -37,6 +37,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="YdV-B5-Gej" kind="show" identifier="TacoDetail" id="34Q-jT-qzU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +50,7 @@
                     <navigationItem key="navigationItem" title="🌮" id="4Lm-7g-g7G">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="U7W-5M-VmN">
                             <connections>
-                                <segue destination="8sS-5R-tFY" kind="presentation" id="xmh-dP-71W"/>
+                                <segue destination="8sS-5R-tFY" kind="presentation" identifier="" id="xmh-dP-71W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,6 +58,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9H-ei-moh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="202"/>
+        </scene>
+        <!--Taco Detail View Controller-->
+        <scene sceneID="2rX-1g-Xpw">
+            <objects>
+                <viewController id="YdV-B5-Gej" customClass="TacoDetailViewController" customModule="TacoStand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UHI-cy-UQW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wn8-tX-k3T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hXv-CD-SeY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-EL-REY">
+                                <rect key="frame" x="180" y="171" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="QHZ-Bx-iy4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TacoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-2U-GUW">
+                                <rect key="frame" x="259" y="342" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-co-2Jh">
+                                <rect key="frame" x="282" y="389" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xFX-co-2Jh" firstAttribute="top" secondItem="1Av-2U-GUW" secondAttribute="bottom" constant="26" id="1Eu-2m-Uw0"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="hXv-CD-SeY" secondAttribute="centerX" id="NgC-Ki-CSr"/>
+                            <constraint firstItem="Wn8-tX-k3T" firstAttribute="top" secondItem="xFX-co-2Jh" secondAttribute="bottom" constant="190" id="Pca-DJ-izZ"/>
+                            <constraint firstItem="1Av-2U-GUW" firstAttribute="centerX" secondItem="xFX-co-2Jh" secondAttribute="centerX" id="pb1-k7-p7D"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="top" secondItem="UHI-cy-UQW" secondAttribute="bottom" constant="107" id="rbd-7c-3yw"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="1Av-2U-GUW" secondAttribute="centerX" id="vNX-Qt-JQL"/>
+                            <constraint firstItem="1Av-2U-GUW" firstAttribute="top" secondItem="4DP-EL-REY" secondAttribute="bottom" constant="43" id="xbo-xc-r5D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tacoCost" destination="xFX-co-2Jh" id="tR9-rJ-Obt"/>
+                        <outlet property="tacoImage" destination="4DP-EL-REY" id="l16-0L-zBy"/>
+                        <outlet property="tacoName" destination="1Av-2U-GUW" id="sVc-ya-9jh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNh-5W-4AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845" y="202"/>
         </scene>
         <!--New Taco View Controller-->
         <scene sceneID="qPf-XU-UIZ">
@@ -130,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bge-Kg-PAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="202"/>
+            <point key="canvasLocation" x="1053" y="-570"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uh3-c3-yu2">
