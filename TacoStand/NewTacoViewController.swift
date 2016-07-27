@@ -34,9 +34,6 @@ class NewTacoViewController: UIViewController {
     
     
     @IBAction func addTacoButtonPressed(){
-        
-        
-        
         let url = "https://taco-stand.herokuapp.com/api/tacos/"
         
         guard let apiURL = NSURL(string: url) else {
@@ -53,11 +50,9 @@ class NewTacoViewController: UIViewController {
         print(request)
         
         let parameters = [
-            "taco"  : [
-                "name" : "\(tacoName.text)",
-                "price" : "\(tacoPrice.text)",
-                "photo_url" : "\(tacoPhotoURL.text)",
-                ]
+                "name" : "\(tacoName.text!)",
+                "price" : "\(tacoPrice.text!)",
+                "photo_url" : "\(tacoPhotoURL.text!)"
         ]
         
         
@@ -72,6 +67,7 @@ class NewTacoViewController: UIViewController {
         
         
         self.dismissViewControllerAnimated(true, completion: {})
+        NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
 
     }
 }

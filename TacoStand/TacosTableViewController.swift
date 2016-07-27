@@ -16,6 +16,8 @@ class TacosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadThe🌮()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableData:", name: "reload", object: nil)
+
         
     }
     private func loadThe🌮() {
@@ -62,6 +64,10 @@ class TacosTableViewController: UITableViewController {
     }
 
     
+    func reloadTableData(notification: NSNotification) {
+        tableView.reloadData()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,21 +87,25 @@ class TacosTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TacoCell", forIndexPath: indexPath)
         
         let myTaco = self.tacos[indexPath.row]
-        
-        guard let imageURL = NSURL(string: myTaco.photo_url) else {
-            fatalError("Invalid URL")
-        }
-        
-        let imageData = NSData(contentsOfURL: imageURL)
-        
-        let image = UIImage(data: imageData!)
-        
-        cell.imageView?.image = image
-        
-//        print(myTaco.photo_url)
-        
         cell.textLabel?.text = myTaco.name
         cell.detailTextLabel?.text = myTaco.price
+
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue) {
+            guard let imageURL = NSURL(string: myTaco.photo_url) else {
+                fatalError("Invalid URL")
+            }
+            
+            let imageData = NSData(contentsOfURL: imageURL)
+            
+            let image = UIImage(data: imageData!)
+            dispatch_async(dispatch_get_main_queue(), {
+            print(myTaco.photo_url)
+
+            cell.imageView?.image = image
+
+        })
+        }
 
         return cell
     }
