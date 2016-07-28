@@ -88,6 +88,7 @@ class TacosTableViewController: UITableViewController {
         
         let myTaco = self.tacos[indexPath.row]
         cell.textLabel?.text = myTaco.name
+
         cell.detailTextLabel?.text = myTaco.price
 
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -109,4 +110,40 @@ class TacosTableViewController: UITableViewController {
 
         return cell
     }
+
+
+    var passedName:String!
+    var passedCost:String!
+    var passedImageURL:UIImage!
+
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow;
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
+        
+        passedName = currentCell.textLabel?.text
+        passedCost = currentCell.detailTextLabel?.text
+        passedImageURL = currentCell.imageView?.image
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "TacoDetail") {
+            
+            // initialize new view controller and cast it as your view controller
+            var viewController = segue.destinationViewController as! TacoDetailViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedName = passedName
+            viewController.passedCost = passedCost
+            viewController.passedImageURL = passedImageURL
+
+        }
+        
+    }
+
+
+
 }

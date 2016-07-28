@@ -74,7 +74,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-EL-REY">
                                 <rect key="frame" x="180" y="171" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="QHZ-Bx-iy4"/>
+                                    <constraint firstAttribute="height" constant="128" id="9kH-UF-gsQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="Uaa-p5-A7I"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TacoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-2U-GUW">
@@ -92,13 +93,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xFX-co-2Jh" firstAttribute="top" secondItem="1Av-2U-GUW" secondAttribute="bottom" constant="26" id="1Eu-2m-Uw0"/>
-                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="hXv-CD-SeY" secondAttribute="centerX" id="NgC-Ki-CSr"/>
-                            <constraint firstItem="Wn8-tX-k3T" firstAttribute="top" secondItem="xFX-co-2Jh" secondAttribute="bottom" constant="190" id="Pca-DJ-izZ"/>
-                            <constraint firstItem="1Av-2U-GUW" firstAttribute="centerX" secondItem="xFX-co-2Jh" secondAttribute="centerX" id="pb1-k7-p7D"/>
-                            <constraint firstItem="4DP-EL-REY" firstAttribute="top" secondItem="UHI-cy-UQW" secondAttribute="bottom" constant="107" id="rbd-7c-3yw"/>
-                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="1Av-2U-GUW" secondAttribute="centerX" id="vNX-Qt-JQL"/>
-                            <constraint firstItem="1Av-2U-GUW" firstAttribute="top" secondItem="4DP-EL-REY" secondAttribute="bottom" constant="43" id="xbo-xc-r5D"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="1Av-2U-GUW" secondAttribute="centerX" id="Bb6-v4-Lf6"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="hXv-CD-SeY" secondAttribute="centerX" id="aTb-rt-tfF"/>
+                            <constraint firstItem="1Av-2U-GUW" firstAttribute="top" secondItem="4DP-EL-REY" secondAttribute="bottom" constant="43" id="fNd-Iv-fyW"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="centerX" secondItem="xFX-co-2Jh" secondAttribute="centerX" id="rJk-qh-YuU"/>
+                            <constraint firstItem="4DP-EL-REY" firstAttribute="top" secondItem="UHI-cy-UQW" secondAttribute="bottom" constant="107" id="xfa-Ld-esR"/>
+                            <constraint firstItem="xFX-co-2Jh" firstAttribute="top" secondItem="1Av-2U-GUW" secondAttribute="bottom" constant="26" id="xyu-aD-6vi"/>
                         </constraints>
                     </view>
                     <connections>

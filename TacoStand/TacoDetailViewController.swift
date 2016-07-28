@@ -10,7 +10,10 @@ import UIKit
 
 class TacoDetailViewController: UIViewController {
     
-    
+    var passedName:String!
+    var passedCost:String!
+    var passedImageURL:UIImage!
+
     @IBOutlet weak var tacoName :UILabel!
     @IBOutlet weak var tacoCost :UILabel!
     @IBOutlet weak var tacoImage :UIImageView!
@@ -19,8 +22,15 @@ class TacoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Name:\(passedName), Cost:\(passedCost)")
 
         // Do any additional setup after loading the view.
+        
+        
+        tacoName.text = passedName
+        tacoCost.text = passedCost
+        tacoImage.image = passedImageURL
+        
     }
 
     override func didReceiveMemoryWarning() {
