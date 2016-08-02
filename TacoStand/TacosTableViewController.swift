@@ -15,9 +15,10 @@ class TacosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadThe🌮()
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(TacosTableViewController.reloadTableData(_:)), name: "reload", object: nil)
+        
 
+        loadThe🌮()
         
     }
     private func loadThe🌮() {
@@ -56,7 +57,7 @@ class TacosTableViewController: UITableViewController {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
-                
+                print("HAI!")
             })
             
             
@@ -65,7 +66,9 @@ class TacosTableViewController: UITableViewController {
     
     
     func reloadTableData(notification: NSNotification) {
-        tableView.reloadData()
+        print("haii")
+        loadThe🌮()
+
     }
     
     
@@ -110,38 +113,16 @@ class TacosTableViewController: UITableViewController {
 
         return cell
     }
-
-
-    var passedName:String!
-    var passedCost:String!
-    var passedImageURL:UIImage!
-
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-        
-        // Get Cell Label
-        let indexPath = tableView.indexPathForSelectedRow;
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
-        
-        passedName = currentCell.textLabel?.text
-        passedCost = currentCell.detailTextLabel?.text
-        passedImageURL = currentCell.imageView?.image
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "TacoDetail") {
+        if (segue.identifier == "TacoDetail"){
+            let tacoInfoViewController = segue.destinationViewController as! TacoDetailViewController
             
-            // initialize new view controller and cast it as your view controller
-            var viewController = segue.destinationViewController as! TacoDetailViewController
-            // your new view controller should have property that will store passed value
-            viewController.passedName = passedName
-            viewController.passedCost = passedCost
-            viewController.passedImageURL = passedImageURL
-
+            let indexPath = self.tableView.indexPathForSelectedRow?.row
+            
+            tacoInfoViewController.allTacos = tacos[indexPath!]
         }
-        
     }
 
 

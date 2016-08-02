@@ -8,13 +8,12 @@
 
 import UIKit
 
+
 class NewTacoViewController: UIViewController {
 
     @IBOutlet weak var tacoName :UITextField!
     @IBOutlet weak var tacoPrice :UITextField!
     @IBOutlet weak var tacoPhotoURL :UITextField!
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,28 +8,33 @@
 
 import UIKit
 
+
 class TacoDetailViewController: UIViewController {
     
-    var passedName:String!
-    var passedCost:String!
-    var passedImageURL:UIImage!
+    
+    var allTacos = Tacos()
 
     @IBOutlet weak var tacoName :UILabel!
     @IBOutlet weak var tacoCost :UILabel!
-    @IBOutlet weak var tacoImage :UIImageView!
+    @IBOutlet weak var tacosURL :UIImageView!
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Name:\(passedName), Cost:\(passedCost)")
 
-        // Do any additional setup after loading the view.
+        self.tacoName.text = self.allTacos.name
+        self.tacoCost.text = self.allTacos.price
         
         
-        tacoName.text = passedName
-        tacoCost.text = passedCost
-        tacoImage.image = passedImageURL
+        let tacosURL = NSURL(string: self.allTacos.photo_url)
+        let imageData = NSData(contentsOfURL: tacosURL!)
+        let tacoImage = UIImage(data: imageData!)
+        
+        self.tacosURL.image = tacoImage
+        
+        
+        
         
     }
 
