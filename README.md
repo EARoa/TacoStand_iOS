@@ -8,6 +8,11 @@
 
 
 <b>API</b>
-```GET - Get All Tacos: https://taco-stand.herokuapp.com/api/tacos/
+<br>
+```
+GET - Get All Tacos: https://taco-stand.herokuapp.com/api/tacos/
+
 GET - Get Taco by Id: https://taco-stand.herokuapp.com/api/tacos/1 (where id is the id of the Taco)
-POST - Create a new Taco: https://taco-stand.herokuapp.com/api/tacos/```
+
+POST - Create a new Taco: https://taco-stand.herokuapp.com/api/tacos/
+```
